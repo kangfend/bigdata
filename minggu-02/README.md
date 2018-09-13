@@ -183,4 +183,88 @@ Operator `=` digunakan untuk memberikan nilai pada suatu variabel
 Python mendukung tipe data lainnya juga lihar [disini](https://docs.python.org/3/library/stdtypes.html#typesnumeric)
 
 #### 3.1.2. [Strings](https://docs.python.org/3/tutorial/introduction.html#strings)
+Selain tipe data untuk angka atau bilangan Python mempunyai tipe data untuk string, pembuatan string harus diapit dengan `'...'` (petik satu) atau `"..."` (petik ganda)
+```
+>>> 'Cobaaaaa'
+'Cobaaaaa'
+>>> "Cobaa..."
+'Cobaa...'
+>>> """cobaaaa
+... aku mau mau nyoba
+... """
+'cobaaaa\naku mau mau nyoba\n'
+```
 
+`"""..."""` atau `'''...'''` digunakan jika string mempunya banyak baris
+
+String juga bisa di-concate atau disambungkan dengan beberapa string menggunakan operator `+` atau hanya dengan spasi
+```
+>>> 'aku' + 'adalah' + 'superman'
+'akuadalahsuperman'
+>>> 'aku' 'adalah' 'superman'
+'akuadalahsuperman'
+```
+
+Bisa menggunakan tanda kurung jika string memiliki banyak baris
+```
+>>> vari = ("aku mau coba dulu"
+...     "bentaaar")
+>>> vari
+'aku mau coba dulubentaaar'
+```
+
+Di Python _everything is object_ jadi string juga bisa di_subscripted_ dan memiliki index disetiap karakternya
+```
+>>> vari[0]
+'a'
+>>> vari[2]
+'u'
+>>> vari[3]
+' '
+>>> vari[5]
+'a'
+```
+
+#### 3.1.3. [Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
+Adalah tipe data yang memiliki banyak nilai dengan tipe data yg beragam didalamnya
+
+```
+>>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]
+>>> squares[3]
+16
+>>> squares[:]
+[1, 4, 9, 16, 25]
+>>> squares + [90, 65, 32]
+[1, 4, 9, 16, 25, 90, 65, 32]
+>>> squares
+[1, 4, 9, 16, 25]
+>>> squares[:]
+[1, 4, 9, 16, 25]
+```
+
+`:` adalah _slicing_ untuk mengambil potongan atau suatu bagian dari list
+
+`append()` digunakan untuk menambahkan nilai (element) pada list
+```
+squsquares.append(216)
+```
+
+### 3.2. [First Steps Towards Programming](https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming)
+Sangat mudah melakukan operasi _fibbonaci_ menggunakan Python
+
+```
+>>> a, b = 0, 1
+>>> while a < 10:
+...     print(a)
+...     a, b = b, a+b
+...
+0
+1
+1
+2
+3
+5
+8
+```
