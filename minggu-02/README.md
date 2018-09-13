@@ -89,7 +89,7 @@ Contoh
 # -*- coding: cp1252 -*-
 ```
 
----
+<hr />
 
 ## 3. An Informal Introduction to Python
 Penulisan pada Python
@@ -279,6 +279,8 @@ Sangat mudah melakukan operasi _fibbonaci_ menggunakan Python
 5
 8
 ```
+
+<hr />
 
 ## 4. [More Control Flow Tools](https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools)
 Selain `while` untuk perulangan Python seperti pada bahasa pemrograman lainnya
