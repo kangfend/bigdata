@@ -206,3 +206,55 @@ dan tentunya dapat menampung beberapa object
 v = ([1, 2, 3], [3, 2, 1])
 print(v)
 ```
+
+Ini adalah tuple packing `t = 12345, 54321, 'hello!'` yang artinya variable `t`
+mempunyai nilai bertipe data tuple dengan nilai `12345`, `54321`, `'hello!'`, operasi sebaliknya adalah
+
+```python
+x, y, z = t
+print(t)
+print(x)
+print(y)
+print(z)
+```
+
+yang artinya setiap item yang ada didalam tuple milik variable `t` akan di _unpacking_ kemudian diserahkan ke variable `x`, `y`, `z`,
+urutan _unpacking_ berjalan dengan baik untuk semua urutan yang ada disebelah kanan `=`
+
+## 5.4. [Sets](https://docs.python.org/3/tutorial/datastructures.html#sets)
+Python juga mempunyai tipe data lain yaitu sets, yang menyimpan nilainya tidak berurutan
+
+```python
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)
+
+print('orange' in basket)
+print('crabgrass' in basket)
+
+a = set('abracadabra')
+b = set('alacazam')
+print(a)
+
+print (a - b)
+print(a | b)
+print(a & b)
+print(a ^ b)
+```
+
+kode diatas yang akan menampilkan
+```
+{'orange', 'banana', 'pear', 'apple'}
+True
+False
+{'a', 'r', 'b', 'c', 'd'}
+{'r', 'd', 'b'}
+{'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}
+{'a', 'c'}
+{'r', 'd', 'b', 'm', 'z', 'l'}
+```
+
+Sama dengan list dan tuple, sets juga mendukung penggunaan loop dan if didalamnya
+```python
+a = {x for x in 'abracadabra' if x not in 'abc'}
+print(a)
+```
