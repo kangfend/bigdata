@@ -178,10 +178,163 @@ sys.path.append('/ufs/guido/lib/python')
 <hr>
 
 ## 6.3. [The dir() Function]()
+Fungsi `dir()` digunakan untuk mencari nama module yang didefinisikan
+```python
+import fibo, sys
+print(dir(fibo))
+print(dir(sys))
+```
+
+kode diatas akan menampilkan list string berisi nama module
+```
+['__name__', 'fib', 'fib2']
+['__displayhook__', '__doc__', '__excepthook__', '__loader__', '__name__',
+ '__package__', '__stderr__', '__stdin__', '__stdout__',
+ '_clear_type_cache', '_current_frames', '_debugmallocstats', '_getframe',
+ '_home', '_mercurial', '_xoptions', 'abiflags', 'api_version', 'argv',
+ 'base_exec_prefix', 'base_prefix', 'builtin_module_names', 'byteorder',
+ 'call_tracing', 'callstats', 'copyright', 'displayhook',
+ 'dont_write_bytecode', 'exc_info', 'excepthook', 'exec_prefix',
+ 'executable', 'exit', 'flags', 'float_info', 'float_repr_style',
+ 'getcheckinterval', 'getdefaultencoding', 'getdlopenflags',
+ 'getfilesystemencoding', 'getobjects', 'getprofile', 'getrecursionlimit',
+ 'getrefcount', 'getsizeof', 'getswitchinterval', 'gettotalrefcount',
+ 'gettrace', 'hash_info', 'hexversion', 'implementation', 'int_info',
+ 'intern', 'maxsize', 'maxunicode', 'meta_path', 'modules', 'path',
+ 'path_hooks', 'path_importer_cache', 'platform', 'prefix', 'ps1',
+ 'setcheckinterval', 'setdlopenflags', 'setprofile', 'setrecursionlimit',
+ 'setswitchinterval', 'settrace', 'stderr', 'stdin', 'stdout',
+ 'thread_info', 'version', 'version_info', 'warnoptions']
+```
+
+jika tidak diberikan argument maka `dir()` akan menampilkan list yang kita buat
+```python
+a = [1, 2, 3, 4, 5]
+import fibo
+fib = fibo.fib
+print(dir())
+
+# Output
+# ['__builtins__', '__name__', 'a', 'fib', 'fibo', 'sys']
+```
+> Yang ditampilkan adalah : variables, modules, functions, etc.
+
+jika ingin menampilkan built-in variable dan function tambahkan argument `builtins`
+```python
+import builtins
+print(dir(builtins))
+```
+maka akan menampilkan
+```
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
+ 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',
+ 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',
+ 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning',
+ 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False',
+ 'FileExistsError', 'FileNotFoundError', 'FloatingPointError',
+ 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError',
+ 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError',
+ 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError',
+ 'MemoryError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented',
+ 'NotImplementedError', 'OSError', 'OverflowError',
+ 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError',
+ 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning',
+ 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError',
+ 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError',
+ 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError',
+ 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning',
+ 'ValueError', 'Warning', 'ZeroDivisionError', '_', '__build_class__',
+ '__debug__', '__doc__', '__import__', '__name__', '__package__', 'abs',
+ 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes', 'callable',
+ 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits',
+ 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit',
+ 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr',
+ 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass',
+ 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview',
+ 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property',
+ 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice',
+ 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars',
+ 'zip']
+```
 
 <hr>
 
 ## 6.4. [Packages](https://docs.python.org/3/tutorial/modules.html#the-dir-function)
+Ada sebuah cara untuk mengelompokkan modules agar kode Python terorganisir, entah itu
+`function`, `class`, `variable` dan lainnya, ini yang kemudian disebut sebagai *package*
+jika sebuah module mempunya submodule maka cara mengaksesnya adalah dengan dot (`.`)
+berikut ini adalah contoh struktur module yang dikelompokkan sehingga membentuk sebuah package
+
+```
+./mocostore
+├── app
+│   ├── __init__.py
+│   ├── admin
+│   │   └── user
+│   │       ├── account
+│   │       │   └── ...py
+│   │       ├── books
+│   │       │   └── ...py
+│   │       ├── dashboard
+│   │       │   └── ...py
+│   │       └── project
+│   │           └── ...py
+│   ├── admin
+│   │   └── user
+│   │       ├── account
+│   │       │   └── ...py
+│   │       ├── book
+│   │       │   └── ...py
+│   │       ├── member
+│   │       │   └── ...py
+│   │       ├── project
+│   │       │   └── ...py
+│   │       └── __init__.py
+│   ├── templates
+│   │   └── admin
+│   │       ├── account
+│   │       │   └── ...html
+│   │       ├── books
+│   │       │   └── ...html
+│   │       ├── dashboard
+│   │       │   └── ...html
+│   │       ├── project
+│   │       │   └── ...html
+│   │       └── layout.html
+│   └── utils
+│       ├── database.py
+│       ├── encoder.py
+│       ├── helper.py
+│       ├── hooks.py
+│       ├── jinja.py
+│       ├── mailer.py
+│       ├── parsedatetime.py
+│       └── ...
+├── config.py
+├── requirements.txt
+└── run.py
+```
+berkas `__init__.py` wajib dibuat jika ingin membuat suatu package, berkas `__init__.py`
+bisa saja tidak terisi kode apapun.
+
+Sebagai contoh, kita akan memanggil module `database` yang berada didalam package
+`utils` :
+```python
+import app.utils.database.connect
+```
+jika dengan cara diatas maka item yang terakhir haruslah module atau subpackage
+*bukan* `class`, `function`, atau `variable`.
+
+atau bisa juga menggunakan from
+```python
+from app.utils.database import connect
+```
+
+Jikang menggunakan `from package import item` maka item yang dimaksudkan bisa jadi
+submodule (atau subpackage) dari sebuah package, atau yang pendefinisian lainnya
+seperti `function`, `class`, atau `variable`. Jika yang kita memanggil dengan nama yang salah
+atau yang dipanggil tidak ada maka akan mengembalikan error [*ImportError*](https://docs.python.org/3/library/exceptions.html#ImportError)
+
 ### 6.4.1. [Importing * From a Package](https://docs.python.org/3/tutorial/modules.html#packages)
 ### 6.4.2. [Intra-package References](https://docs.python.org/3/tutorial/modules.html#intra-package-references)
 ### 6.4.3. [Packages in Multiple Directories](https://docs.python.org/3/tutorial/modules.html#packages-in-multiple-directories)
