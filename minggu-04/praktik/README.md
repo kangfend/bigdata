@@ -266,7 +266,7 @@ jika sebuah module mempunya submodule maka cara mengaksesnya adalah dengan dot (
 berikut ini adalah contoh struktur module yang dikelompokkan sehingga membentuk sebuah package
 
 ```
-./mocostore
+./belajar
 ├── app
 │   ├── __init__.py
 │   ├── admin
