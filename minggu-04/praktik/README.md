@@ -336,6 +336,27 @@ seperti `function`, `class`, atau `variable`. Jika yang kita memanggil dengan na
 atau yang dipanggil tidak ada maka akan mengembalikan error [*ImportError*](https://docs.python.org/3/library/exceptions.html#ImportError)
 
 ### 6.4.1. [Importing * From a Package](https://docs.python.org/3/tutorial/modules.html#packages)
+Jika sebelumnya kita menggunakan `*` untuk mengimpor semua module yang ada didalam sebuah package,
+maka resikonya adalah proses impor akan lama jika jumlah modulenya banyak.
+
+Maka salah satu solusinya adalah dengan mendefinisikan variabel `__all__` (`list`)
+didalam berkas `__init__.py` yang berisi nama module yang akan diimpor jika menggunakan `*`.
+
+Contoh
+```python
+__all__ = ["echo", "surround", "reverse"]
+```
+dengan begitu, `from sound.effects import *` akan mengimpor tiga module
+
+jika variabel `__all__` tidak didefinisikan, bisa dengan cara berikut ini
+```python
+import sound.effects.echo
+import sound.effects.surround
+from sound.effects import *
+```
+dengan cara diatas `from sound.effects import *` akan mengimpor semua module
+yang belum terimpor sebelumnya, dengan kata lain akan mengimpor module selain `echo` dan `surround`,
+tapi cara ini disebut _bad practice_.
 
 ### 6.4.2. [Intra-package References](https://docs.python.org/3/tutorial/modules.html#intra-package-references)
 
