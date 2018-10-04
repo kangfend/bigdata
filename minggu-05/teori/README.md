@@ -1,13 +1,13 @@
-Panduan Data Engineer (Bagian 3)
+# Panduan Data Engineer (Bagian 3)
 [Tulisan asli di Medium](https://medium.com/@rchang/a-beginners-guide-to-data-engineering-the-series-finale-2cc92ff14b0)
 
-# Ikhtisar
+## Ikhtisar
 Di bagian ketiga ini (terakhir) akan dibahas tentang konsep dari framework data engineering
 dan membedah pola desain untuk membangung framework tersebut, kemudian akan fokus ke
 beberapa contoh spesifik yang sering digunakan oleh AriBnb, yang bertujuan agar pembaca
 dapat mengembangkan sendiri untuk abstraksi framework.
 
-# Skenario Umum
+## Skenario Umum
 1. data modeling and schema design
 2. identify relevant fact and dimension tables
 3. joining the tables to create a final denormalized table
@@ -18,7 +18,7 @@ seperti itu dirasa _repetitive_ (berulang-ulang) dan nyatanya pekerjaan ini
 sudah dilakukan sehari-hari oleh data scientist. Sedangkan, alur kerja ini dapat
 diotomasikan (setidaknya sebagian).
 
-# From Pipelines To Frameworks
+## From Pipelines To Frameworks
 Seperti yang telah dibahas pada [bagian 2](../minggu-04/teori/README.md),
 DAG milik Airflow bisa jadi sangat kompleks, terkadang, komputasi data bahkan
 mengikuti aliran kontrol seperti logika. Sebagai contohnya :
@@ -52,10 +52,18 @@ Implikasi dari kerangka kerja ini sangatlah dalam karena secara drastis
 meningkatkan cara kerja data scientist. Ini adalah teknologi yang memungkinkan
 para data scientist untuk memberikan _value at scale_.
 
-# Pola Desain untuk Framework Data Engineering
+## Pola Desain untuk Framework Data Engineering
 ![Pola Desain untuk Framework Data Engineering](https://cdn-images-1.medium.com/max/1000/1*iDfX-IBcwGu8R0PbiXw-Bg.png)
 
-# Kesimpulan
+### 1. Incremental Computation Framework
 
-# Footnote
-## _value chain_
+### 2. Backfill Framework
+
+### 3. Global Metrics Framework
+
+### 4. Experimentation Reporting Framework
+
+## Kesimpulan
+
+## Footnote
+### _value chain_
