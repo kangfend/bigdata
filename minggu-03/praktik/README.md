@@ -451,4 +451,4 @@ Objek `sequence` bisa dikomparasikan dengan objek lainnya. Komparasi ini menggun
 (1, 2, ('aa', 'ab'))   < (1, 2, ('abc', 'a'), 4)
 ```
 
-## Selamat Belajar!
+**Selamat Belajar!**
