@@ -4,7 +4,7 @@ Miniconda adalah versi minimal dari Anaconda, kedua tools ini adalah untuk membu
 2. Ubah mode agar berkas bisa dieksekusi dengan perintah `chmod +x Miniconda3-latest-Linux-x86_64.sh`
 3. Kemudian eksekusi berkas tersebut dengan perintah `./Miniconda3-latest-Linux-x86_64.sh`
 4. Ikuti langkah-langkah
-    - Jika muncul ```Please, press ENTER to continue`` tekan **enter**
+    - Jika muncul `Please, press ENTER to continue` tekan **enter**
     - Kemudian tekan enter sampai `Do you accept the license terms? [yes|no]` tulis **yes** kemudian enter
     - Kemudian jika muncul prompt seperti dibawah ini tekan enter saja
     ```
@@ -169,7 +169,7 @@ Jika kode yang kita buat tidak mengalami error dan kita, kurang lebih akan muncu
 Mari jalankan beberapa perintah untuk memvalidasi skrip ini lebih lanjut.
 
 Menampilkan daftar DAG yang sedang aktif
-```python
+```bash
 airflow list_dags
 ```
 
@@ -200,7 +200,7 @@ tutorial
 ```
 
 Menampilkan detail task tutorial 
-```python
+```bash
 airflow list_tasks tutorial
 ```
 
@@ -212,7 +212,7 @@ templated
 ```
 
 Menampilkan hirarki sebuah task untuk DAG tutorial
-```python
+```bash
 airflow list_tasks tutorial --tree
 ```
 
