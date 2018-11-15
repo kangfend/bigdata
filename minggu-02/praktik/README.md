@@ -1,10 +1,211 @@
-# Memahami Pengendalian Kondisi
+# 2.2. The Interpreter and Its Environment
+### 2.2.1. [Source Code Encoding](https://docs.python.org/3/tutorial/interpreter.html#source-code-encoding)
+Secara default penulisan kode python pada berkas sebagai UTF-8 jika ingin
+mengganti encoding berikan kode berikut diawal baris berkas
+`# -*- coding: encoding -*-`
 
-## 4. [More Control Flow Tools](https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools)
+Contoh
+```
+#!/usr/bin/env python3
+# -*- coding: cp1252 -*-
+```
+
+<hr />
+
+## 3. An Informal Introduction to Python
+Penulisan pada Python
+
+Penulisan blok komentar pada kode sumber Python
+```python
+# ini adalah komentar pertama
+spam = 1  # komentar dua
+          # ... dan ini yang ketiga!
+text = "# Ini bukan komentar karena diapit dengan tanda petik ganda."
+```
+
+### 3.1. Using Python as a Calculator
+Mencoba membuat program pertama (kalkulator) menggunakan mode interaktif
+
+#### 3.1.1. [Numbers](https://docs.python.org/3/tutorial/introduction.html#numbers)
+Mode interaktif bisa juga digunakan sebagai kalkulator
+> Kalo emak-emak yang jualan di pasar pada pakenya Python gimana ya? :/
+
+Python mempunya beberapa operator yang gunakan untuk operasi aritmatika diantaranya :
+- `+` Penjumlahan
+- `-` Pengurangan
+- `*` Perkalian
+- `/` Pembagian
+
+> *Tapi!* cinta gak boleh dibagi, tapi kalo ditambah boleh aja :V
+
+```
+>>> 4 + 2
+6
+>>> 23 - 3*3
+14
+>>> (50 - 3*3) / 2
+20.5
+>>> 9 / 4
+2.25
+>>>
+```
+
+Jika menggunakan operator pembagian (`/`) akan selalu menghasilkan bilangan pecahan
+
+Angka atau nilai bulat (mis: `2`, `10`, `46`) memiliki tipe data `int` (integer) dan
+angka atau bilangan pecahan (mis: `2.3`, `30.5`) memiliki tipe data `float`
+
+Operas aritmatika menggunakan operator `/` akan selalu menghasilkan bilangan
+pecahan, tapi jika ingin hasilnya bilangan bulat bisa menggunakan
+[floor division](https://docs.python.org/3/glossary.html#term-floor-division)
+dengan operator `//` garis miring dua kali
+```
+>>> 15 / 2
+7.5
+>>> 15 // 4
+3
+>>> 15 / 4
+3.75
+```
+
+Jika kita ingin mengetahui sisa dari pembagian maka gunakanlah operator
+modulus `%`
+```
+>>> 12 % 4
+0
+>>> 17 % 3
+2
+```
+
+Bisa juga kita mengkalkulasi dengan eksponen (pemangkatan) menggunakan
+operator `**` istilanya _powers_ jika di Python
+```
+>>> 5 ** 2
+25
+>>> 10 ** 2
+100
+```
+
+Operator `=` digunakan untuk memberikan nilai pada suatu variabel
+```
+>>> panjang = 30
+>>> lebar = 25
+>>> panjang * lebar
+750
+```
+
+`_` digunakan untuk menyimpan nilai yang terakhir kali di print, namun nilainya
+tidak dapat diubah (read only)
+```
+>>> harga = 34.000
+>>> satuan = 2
+>>> harga * satuan
+68.0
+>>> total = 0
+>>> total * _
+213.0
+>>> round(_, 3)
+213.0
+>>>
+```
+Python mendukung tipe data lainnya juga lihar
+[disini](https://docs.python.org/3/library/stdtypes.html#typesnumeric)
+
+### 3.1.2. [Strings](https://docs.python.org/3/tutorial/introduction.html#strings)
+Selain tipe data untuk angka atau bilangan Python mempunyai tipe data untuk
+string, pembuatan string harus diapit dengan `'...'` (petik satu) atau `"..."` (petik ganda)
+```
+>>> 'Cobaaaaa'
+'Cobaaaaa'
+>>> "Cobaa..."
+'Cobaa...'
+>>> """cobaaaa
+... aku mau mau nyoba
+... """
+'cobaaaa\naku mau mau nyoba\n'
+```
+
+`"""..."""` atau `'''...'''` digunakan jika string mempunya banyak baris
+
+String juga bisa di-concate atau disambungkan dengan beberapa string
+menggunakan operator `+` atau hanya dengan spasi
+```
+>>> 'aku' + 'adalah' + 'superman'
+'akuadalahsuperman'
+>>> 'aku' 'adalah' 'superman'
+'akuadalahsuperman'
+```
+
+Bisa menggunakan tanda kurung jika string memiliki banyak baris
+```
+>>> vari = ("aku mau coba dulu"
+...     "bentaaar")
+>>> vari
+'aku mau coba dulubentaaar'
+```
+
+Di Python _everything is object_ jadi string juga bisa di_subscripted_ dan
+memiliki index disetiap karakternya
+```
+>>> vari[0]
+'a'
+>>> vari[2]
+'u'
+>>> vari[3]
+' '
+>>> vari[5]
+'a'
+```
+
+### 3.1.3. [Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
+Adalah tipe data yang memiliki banyak nilai dengan tipe data yg beragam didalamnya
+
+```
+>>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]
+>>> squares[3]
+16
+>>> squares[:]
+[1, 4, 9, 16, 25]
+>>> squares + [90, 65, 32]
+[1, 4, 9, 16, 25, 90, 65, 32]
+>>> squares
+[1, 4, 9, 16, 25]
+>>> squares[:]
+[1, 4, 9, 16, 25]
+```
+
+`:` adalah _slicing_ untuk mengambil potongan atau suatu bagian dari list
+
+`append()` digunakan untuk menambahkan nilai (element) pada list
+```
+squsquares.append(216)
+```
+
+## 3.2. [First Steps Towards Programming](https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming)
+Sangat mudah melakukan operasi _fibbonaci_ menggunakan Python
+
+```
+>>> a, b = 0, 1
+>>> while a < 10:
+...     print(a)
+...     a, b = b, a+b
+...
+0
+1
+1
+2
+3
+5
+8
+```
+
+# 4. [More Control Flow Tools](https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools)
 Selain `while` untuk perulangan Python seperti pada bahasa pemrograman lainnya
 yaitu mempunyai statement untuk mengendalikan sebuah kondisi dan alur.
 
-### 4.1. [if Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
+## 4.1. [if Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
 ```
 >>> x = int(input("Please enter an integer: "))
 Please enter an integer: 45
@@ -22,7 +223,7 @@ More
 
 Statement diatas mempunyai 4 kondisi penanganan
 
-### 4.2. [for Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
+## 4.2. [for Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
 
 Berikut ini adalah contoh penggunaan perulangan menggunakan `for`
 ```
@@ -39,7 +240,7 @@ Contoh diatas mterdapat 3 buah nilai yang disimpan pada variable `words`
 dengan tipe data list yang artinya, kita hanya bisa menggunakan for pada suatu
 nilai atau variable yang sifatnya `iterable`
 
-### 4.3. [The range() Function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
+## 4.3. [The range() Function](https://docs.python.org/3/tutorial/controlflow.html#the-range-function)
 Fungsi `range()` memudahkan kita pada saat kita ingin melakukan iterasi dengan
 pengurutan nomor, karena fungsi `range` dapat men-_generate_ sebuah deret aritmetika
 
@@ -70,7 +271,7 @@ contoh diatas, fungsi range menerima 3 argument :
 2. `10` jumlah iterasi
 3. `3` rentan (lompatan) disebut juga sebagai _step_
 
-### 4.4. [break and continue Statements, and else Clauses on Loops](https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
+## 4.4. [break and continue Statements, and else Clauses on Loops](https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
 Pada saat kita melakukan perulangan mungkin terdapat sebuah kondisi dimana kita
 harus menghentikan atau melompatinya
 
@@ -102,7 +303,7 @@ Contoh
 9 equals 3 * 3
 ```
 
-### 4.5. [pass Statements](https://docs.python.org/3/tutorial/controlflow.html#pass-statements)
+## 4.5. [pass Statements](https://docs.python.org/3/tutorial/controlflow.html#pass-statements)
 `pass` tidak melakukan apapun, ini digunakan ketika suatu blok statement mengharuskan adanya kelanjutan dari program.
 
 biasanya digunakan kita kita membuat suatu `class` tapi kita belum ingin
@@ -135,7 +336,7 @@ dan bisa juga digunakan untuk mendefinisikan sebuah fungsi yang kosong
 ...
 ```
 
-### 4.6. [Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+## 4.6. [Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
 Sebuah fungsi digunakan untuk meringkas atau membungkus suatu proses sehingga
 dapat dipanggil untuk digunakan lagi, ini biasa disebut `reusable code`
 
@@ -158,8 +359,8 @@ _string literal_ sebagai penjelasan untuk penulis kode dari fungsi itu sendiri c
 ```
 fungsi diatas untuk menampilkan bilangan fibonacci sampai ke _n_
 
-### 4.7. More on Defining Functions
-#### 4.7.1. [Default Argument Values](https://docs.python.org/3/tutorial/controlflow.html#default-argument-values)
+## 4.7. More on Defining Functions
+### 4.7.1. [Default Argument Values](https://docs.python.org/3/tutorial/controlflow.html#default-argument-values)
 Argument pada sebuah fungsi dapat diberikan nilai default, contoh
 
 ```
@@ -192,7 +393,7 @@ Keyword `in` digunakan untuk memerika apakah yang kita masukan terdaftar atau ti
 
 > Default value hanya akan dievaluasi sekali saja, sehingga nilai yang dimasukkan akan berbeda jika menggunakan `immutable`
 
-#### 4.7.2. [Keyword Arguments](https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments)
+### 4.7.2. [Keyword Arguments](https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments)
 Sebuah fungsi juga dapat dipanggil menggunakan _keyword argument_ dengan format `nama_argumen=nilai`
 ```
 >>> def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
@@ -249,7 +450,7 @@ client : John Cleese
 sketch : Cheese Shop Sketch
 ```
 
-#### 4.7.4. [Unpacking Argument Lists](https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists)
+### 4.7.4. [Unpacking Argument Lists](https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists)
 Digunakan ketika argumen sudah ada dalam `list` atau `tuple` tetapi perlu
 dibongkar untuk panggilan fungsi yang membutuhkan argumen posisi terpisah
 ```
@@ -273,7 +474,7 @@ Dengan cara yang sama, dictionary dapat menyampaikan keyword argument dengan ope
 -- This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
 ```
 
-#### 4.7.5. [Lambda Expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
+### 4.7.5. [Lambda Expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
 Lambda expression sebenarnya sama dengan fungsi namun tidak memiliki nama atau biasa
 disebut `anonymous function` fungsi ini mengembalikan penjumlahan dari dua buah argument.
 Lambda sangat berguna dan menulisnya cukup singkat karena hanya membutuhkan satu baris saja
@@ -301,7 +502,7 @@ Secara semantik fungsi ini adalah _syntactic sugar_ nya fungsi biasa
 
 Contoh diatas digunakan untuk sebuah fungsi yang argument nya harus fungsi
 
-#### 4.7.6. [Documentation Strings](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings)
+### 4.7.6. [Documentation Strings](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings)
 Document String atau sering juga disebut "Doc String" adalah sebuah komentar yang diberikan
 penulis kode untuk sebuah fungsim, ini sangat membantu sekali dalam debugging atau
 ketika kode kita dilihat oleh orang lain yang ingin memahaminya
@@ -325,7 +526,7 @@ Do nothing, but document it.
     No, really, it doesn't do anything.
 ```
 
-#### 4.7.7. [Function Annotations](https://docs.python.org/3/tutorial/controlflow.html#function-annotations)
+### 4.7.7. [Function Annotations](https://docs.python.org/3/tutorial/controlflow.html#function-annotations)
 Anotasi pada fungsi adalah informasi metadata yang bersifat opsional tentang tipe data,
 lebih jelasnya [PEP 3107](https://www.python.org/dev/peps/pep-3107) dan
 [PEP 484](https://www.python.org/dev/peps/pep-0484)
@@ -348,7 +549,7 @@ Arguments: spam eggs
 'spam and eggs
 ```
 
-#### 4.8. [Intermezzo: Coding Style](https://docs.python.org/3/tutorial/controlflow.html#intermezzo-coding-style)
+## 4.8. [Intermezzo: Coding Style](https://docs.python.org/3/tutorial/controlflow.html#intermezzo-coding-style)
 Jika kita menulis kode sampai ratusan bahkan ribuan baris, dan dengan algoritma
 maupun alur yang rumit maka sudah saatnya membahas tentang gaya penulisan pada Python
 

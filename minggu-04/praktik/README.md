@@ -362,4 +362,80 @@ tapi cara ini disebut _bad practice_.
 
 ### 6.4.3. [Packages in Multiple Directories](https://docs.python.org/3/tutorial/modules.html#packages-in-multiple-directories)
 
+<hr />
+
+# 7. [Input and Output](https://docs.python.org/3/tutorial/inputoutput.html)
+
+## 7.1. [Fancier Output Formatting](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
+
+### 7.1.1. [Formatted String Literals](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals)
+
+### 7.1.2. [The String format() Method](https://docs.python.org/3/tutorial/inputoutput.html#the-string-format-method)
+
+### 7.1.3. [Manual String Formatting](https://docs.python.org/3/tutorial/inputoutput.html#manual-string-formatting)
+
+### 7.1.4. [Old string formatting](https://docs.python.org/3/tutorial/inputoutput.html#old-string-formatting)
+
+## 7.2. [Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+
+### 7.2.1. [Methods of File Objects](https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects)
+
+### 7.2.2. [Saving structured data with json](https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json)
+
+# 8. [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)
+
+## 8.1. [Syntax Errors](https://docs.python.org/3/tutorial/errors.html#syntax-errors)
+
+<hr>
+
+## 8.2. [Exceptions](https://docs.python.org/3/tutorial/errors.html#exceptions)
+
+## 8.3. [Handling Exceptions](https://docs.python.org/3/tutorial/errors.html#handling-exceptions)
+
+## 8.4. [Raising Exceptions](https://docs.python.org/3/tutorial/errors.html#raising-exceptions)
+
+## 8.5. [User-defined Exceptions](https://docs.python.org/3/tutorial/errors.html#user-defined-exceptions)
+
+## 8.6. [Defining Clean-up Actions](https://docs.python.org/3/tutorial/errors.html#defining-clean-up-actions)
+
+## 8.7. [Predefined Clean-up Actions](https://docs.python.org/3/tutorial/errors.html#predefined-clean-up-actions)
+
+<hr />
+
+# 9. [Classes](https://docs.python.org/3/tutorial/classes.html)
+
+## 9.1. [A Word About Names and Objects](https://docs.python.org/3/tutorial/classes.html#a-word-about-names-and-objects)
+
+## 9.2. [Python Scopes and Namespaces](https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces)
+
+### 9.2.1. [Scopes and Namespaces Example](https://docs.python.org/3/tutorial/classes.html#scopes-and-namespaces-example)
+
+## 9.3. [A First Look at Classes](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes)
+
+### 9.3.1. [Class Definition Syntax](https://docs.python.org/3/tutorial/classes.html#class-definition-syntax)
+
+### 9.3.2. [Class Objects](https://docs.python.org/3/tutorial/classes.html#class-objects)
+
+### 9.3.3. [Instance Objects](https://docs.python.org/3/tutorial/classes.html#instance-objects)
+
+### 9.3.4. [Method Objects](https://docs.python.org/3/tutorial/classes.html#method-objects)
+
+### 9.3.5. [Class and Instance Variables](https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables)
+
+## 9.4. [Random Remarks](https://docs.python.org/3/tutorial/classes.html#random-remarks)
+
+## 9.5. [Inheritance](https://docs.python.org/3/tutorial/classes.html#inheritance)
+
+### 9.5.1. [Multiple Inheritance](https://docs.python.org/3/tutorial/classes.html#multiple-inheritance)
+
+## 9.6. [Private Variables](https://docs.python.org/3/tutorial/classes.html#private-variables)
+
+## 9.7. [Odds and Ends](https://docs.python.org/3/tutorial/classes.html#odds-and-ends)
+
+## 9.8. [Iterators](https://docs.python.org/3/tutorial/classes.html#iterators)
+
+## 9.9. [Generators](https://docs.python.org/3/tutorial/classes.html#generators)
+
+## 9.10. [Generator Expressions](https://docs.python.org/3/tutorial/classes.html#generator-expressions)
+
 **Selamat Belajar!**
