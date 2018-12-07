@@ -545,5 +545,261 @@ B M Spurr School of Practical Nursing        Glen Dale     WV   0.0      0.0    
 ```
 
 ## Bab 5 - Boolean Indexing
+### Calculating boolean statistics
+```python
+```
+
+#### Output
+```
+```
+
+### Constructing multiple boolean conditions
+```python
+```
+
+#### Output
+```
+```
+
+### Filtering with boolean indexing
+```python
+```
+
+#### Output
+```
+```
+
+### Replicating boolean indexing with index selection
+```python
+```
+
+#### Output
+```
+```
+
+### Selecting with unique and sorted indexes
+```python
+```
+
+#### Output
+```
+```
+
+### Gaining perspective on stock prices
+```python
+```
+
+#### Output
+```
+```
+
+### Translating SQL WHERE clauses
+```python
+```
+
+#### Output
+```
+```
+
+### Determining the normality of stock market returns
+```python
+```
+
+#### Output
+```
+```
+
+### Improving readability of boolean indexing with the query method
+```python
+```
+
+#### Output
+```
+```
+
+### Preserving Series with the where method
+```python
+```
+
+#### Output
+```
+```
+
+### Masking DataFrame rows
+```python
+```
+
+#### Output
+```
+```
+
+### Selecting with booleans, integer location, and labels
+```python
+```
+
+#### Output
+```
+```
+
 ## Bab 6 - Index Alignment
+### Examining the Index object
+```python
+```
+
+#### Output
+```
+```
+
+### Producing Cartesian products
+```python
+```
+
+#### Output
+```
+```
+
+### Exploding indexes
+```python
+```
+
+#### Output
+```
+```
+
+### Filling values with unequal indexes
+```python
+```
+
+#### Output
+```
+```
+
+### Appending columns from different DataFrames
+```python
+```
+
+#### Output
+```
+```
+
+### Highlighting the maximum value from each column
+```python
+```
+
+#### Output
+```
+```
+
+### Replicating idxmax with method chaining
+```python
+```
+
+#### Output
+```
+```
+
+### Finding the most common maximum
+```python
+```
+
+#### Output
+```
+```
+
+
 ## Bab 7 - Grouping for Aggregation, Filtration and Transformation
+### Defining an aggregation
+```python
+```
+
+#### Output
+```
+```
+
+### Grouping and aggregating with multiple columns and functions
+```python
+```
+
+#### Output
+```
+```
+
+### Removing the MultiIndex after grouping
+```python
+```
+
+#### Output
+```
+```
+
+### Customizing an aggregation function
+```python
+```
+
+#### Output
+```
+```
+
+### Customizing aggregating functions with *args and **kwargs
+```python
+```
+
+#### Output
+```
+```
+
+### Examining the groupby object
+```python
+```
+
+#### Output
+```
+```
+
+### Filtering for states with a minority majority
+```python
+```
+
+#### Output
+```
+```
+
+### Transforming through a weight loss bet
+```python
+```
+
+#### Output
+```
+```
+
+### Calculating weighted mean SAT scores per state with apply
+```python
+```
+
+#### Output
+```
+```
+
+### Grouping by continuous variables
+```python
+```
+
+#### Output
+```
+```
+
+### Counting the total number of flights between cities
+```python
+```
+
+#### Output
+```
+```
+
+### Finding the longest streak of on-time flights
+```python
+```
+
+#### Output
+```
+```
