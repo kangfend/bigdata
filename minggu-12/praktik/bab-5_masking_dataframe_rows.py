@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from IPython import InteractiveShell
 
-get_ipython().run_line_magic('matplotlib', 'inline')
+
+inter = InteractiveShell()
 pd.options.display.max_columns = 50
 
 movie = pd.read_csv('data/movie.csv', index_col='movie_title')
